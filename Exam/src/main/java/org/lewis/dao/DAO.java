@@ -12,6 +12,8 @@ import org.lewis.entity.Film;
 public interface DAO {
        public ResultSet query(Connection conn,Customer customer);
 
-	   public void insert(Connection conn, Film film);
+	   public int insert(Connection conn, Film film);
+
+	   public int delete(Connection conn, Film film);
     
 }

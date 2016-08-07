@@ -15,6 +15,8 @@
    			<th>title</th>
    			<th>description</th>
   			<th>language</th>
+  			<th></th>
+  			<th></th>
         </tr>
         <%
         Class.forName("com.mysql.jdbc.Driver");
@@ -28,6 +30,8 @@
             <td><%out.println(rs.getString("title"));%></td>
             <td><%out.println(rs.getString("description"));%></td>
             <td><%out.println(rs.getString("ln"));%></td>
+            <td><a href="<%=request.getContextPath()%>/DeleteServlet?id=<%=rs.getInt("film_id")%>">DELETE</a></td>
+            <td><a href="<%=request.getContextPath()%>/EditServlet?title=<%=rs.getString("title")%>&des=<%=rs.getString("description")%>&lang=<%=rs.getString("ln")%>">EDIT THIS</a></td>           
         </tr> 
         <%}%>     
     </table>

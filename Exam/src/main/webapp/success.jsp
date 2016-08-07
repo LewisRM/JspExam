@@ -8,5 +8,7 @@
 </head>
 <body>
   登录成功
+ <br>
+ <a href="<%=request.getContextPath()%>/index.jsp">返回首页</a>
 </body>
 </html>

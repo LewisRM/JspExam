@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.lewis.entity.Customer;
 import org.lewis.service.CheckUserService;
@@ -46,6 +47,8 @@ public class CheckServlet extends HttpServlet {
                 
             if(bool){
                 	forward="success.jsp";
+                	 HttpSession session = request.getSession();
+                	 session.setAttribute("flag", "login_success");
                 }else{
                 	request.setAttribute("msg", "用户名和密码输入错误，请重新输入");
                 	forward="error.jsp";

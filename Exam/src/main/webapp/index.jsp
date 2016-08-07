@@ -7,8 +7,22 @@
 <title>Insert title here</title>
 </head>
 <body>
+<%
+           String flag="";
+           Object obj= session.getAttribute("flag");
+           
+           if(obj !=null){
+        	   flag=obj.toString();
+           }
+            if(flag.equals("login_success")){%>
+            	<a href="">退出</a><br>
+            <% }else{%>
+            	<a href="<%=request.getContextPath() %>/login.jsp">登录</a>
+            <% }        
+  %>
 
-<a href="<%=request.getContextPath() %>/login.jsp">登陆</a>
+
+
 <br>
 <br>
 

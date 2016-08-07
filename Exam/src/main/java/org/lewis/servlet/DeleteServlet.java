@@ -9,17 +9,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.lewis.entity.Film;
-import org.lewis.service.CheckUserService;
-import org.lewis.service.InsertFilmS;
+import org.lewis.service.DeleteService;
 
 
-public class InsertFilm extends HttpServlet {
+
+public class DeleteServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private InsertFilmS ifs=new  InsertFilmS();
-  
-    public InsertFilm() {
+	private DeleteService ds=new  DeleteService();
+
+    public DeleteServlet() {
         super();
-        
     }
 
 
@@ -29,22 +28,19 @@ public class InsertFilm extends HttpServlet {
 
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String title=request.getParameter("title");
-		String description=request.getParameter("description");
-		String language=request.getParameter("language");
-		byte languageId=(byte)Integer.parseInt(language);
+
+		String id=request.getParameter("id");
+		short Id=(short)Integer.parseInt(id);
         
         RequestDispatcher rd=null;
         
         String forward=null;
 
         Film film= new Film();
-        film.setTitle(title);
-        film.setDescription(description);
-        film.setLanguageId(languageId);
+        film.setFilmId(Id);
    
         	
-        int count=ifs.insertFilm(film);
+        int count=ds.deleteFilm(film);
             
         if(count>0){
             	forward="success1.jsp";
@@ -55,4 +51,6 @@ public class InsertFilm extends HttpServlet {
             rd.forward(request, response);
 	}
 
-}
+	}
+
+

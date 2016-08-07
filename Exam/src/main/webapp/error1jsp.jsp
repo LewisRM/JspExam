@@ -7,10 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-  登录失败
- <br>
- <a href="<%=request.getContextPath()%>/index.jsp">返回首页</a>
- <br>
- <a href="<%=request.getContextPath() %>/login.jsp" >重新登录</a>
+操作失败
+<br>
+ <a href="<%=request.getContextPath() %>/film.jsp">返回电影</a>
 </body>
 </html>

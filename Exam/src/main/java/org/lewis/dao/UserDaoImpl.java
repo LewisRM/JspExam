@@ -25,9 +25,14 @@ public class UserDaoImpl implements DAO {
 		return null;
 	}
 
-	public void insert(Connection conn, Film film) {
-		// TODO Auto-generated method stub
+	public int insert(Connection conn, Film film) {
 		
+		return 0;
+	}
+
+	public int delete(Connection conn, Film film) {
+		
+		return 0;
 	}
 
 }

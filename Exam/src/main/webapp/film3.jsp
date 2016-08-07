@@ -9,7 +9,7 @@
 </head>
 <body>
 
-    <form name="form2" >
+    <form name="form2" method="post" action="<%=request.getContextPath()%>/InsertFilm" >
        title： <input type="text" name="title" ><br>
        description:  <input type="text" name="description"><br>
        language:
@@ -35,11 +35,9 @@
         	 }else if(document.forms.form2.description.value==""){
         		 alert("please write the description");
         		 document.forms.form2.description.focus();
-        	 }else if(document.forms.form2.fruit.value==""){
+        	 }else if(document.forms.form2.language.value==""){
         		 alert("please select the language");
-        	 }
-        	 else{
-        		 //alert(document.forms.form2.title.value+document.forms.form2.description.value+document.forms.form2.fruit.value);
+        	 }else{
         		 document.forms.form2.submit();
         		 
         	 }       	
